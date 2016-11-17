@@ -8,7 +8,6 @@
 
 class EtatRobot {
 public: 
-    bool fige;
     
     EtatRobot avancer();
     
@@ -29,6 +28,13 @@ public:
     EtatRobot repartir();
     
     EtatRobot afficher();
+    
+    static EtatRobot instance();
+protected: 
+    
+    void EtatRobot();
+private: 
+    static EtatRobot instanceUnique;
 };
 
 #endif //_ETATROBOT_H

@@ -84,3 +84,7 @@ void Robot::repartir() {
 void Robot::afficher() {
     return;
 }
+
+void Robot::Robot() {
+
+}

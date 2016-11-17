@@ -79,3 +79,14 @@ EtatRobot EtatRobot::repartir() {
 EtatRobot EtatRobot::afficher() {
     return null;
 }
+
+/**
+ * @return EtatRobot
+ */
+static EtatRobot EtatRobot::instance() {
+    return instanceUnique;
+}
+
+void EtatRobot::EtatRobot() {
+
+}

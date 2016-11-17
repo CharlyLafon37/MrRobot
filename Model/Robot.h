@@ -8,7 +8,6 @@
 
 class Robot {
 public: 
-    EtatRobot etat;
     
     /**
      * @param x
@@ -42,10 +41,13 @@ public:
     void repartir();
     
     void afficher();
+    
+    void Robot();
 private: 
     String direction;
     Position position;
     Objet objet;
+    EtatRobot etat;
 };
 
 #endif //_ROBOT_H
