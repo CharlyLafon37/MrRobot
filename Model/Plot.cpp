@@ -9,6 +9,10 @@
  * Plot implementation
  */
 
+Plot::Plot() : hauteur(0)
+{
+    
+}
 
 /**
  * @return int

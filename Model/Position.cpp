@@ -9,6 +9,10 @@
  * Position implementation
  */
 
+Position::Position() : x(0), y(0)
+{
+    
+}
 
 /**
  * @param x

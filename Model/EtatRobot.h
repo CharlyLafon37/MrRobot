@@ -9,25 +9,25 @@
 class EtatRobot {
 public: 
     
-    EtatRobot avancer();
+    virtual EtatRobot avancer();
     
-    EtatRobot tourner();
+    virtual EtatRobot tourner();
     
-    EtatRobot saisir();
+    virtual EtatRobot saisir();
     
-    EtatRobot poser();
+    virtual EtatRobot poser();
     
-    EtatRobot peser();
+    virtual EtatRobot peser();
     
-    EtatRobot rencontrerPlot();
+    virtual EtatRobot rencontrerPlot();
     
-    EtatRobot evaluerPlot();
+    virtual EtatRobot evaluerPlot();
     
-    EtatRobot figer();
+    virtual EtatRobot figer();
     
-    EtatRobot repartir();
+    virtual EtatRobot repartir();
     
-    EtatRobot afficher();
+    virtual EtatRobot afficher();
     
     static EtatRobot instance();
 protected: 

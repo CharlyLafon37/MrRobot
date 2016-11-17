@@ -43,11 +43,14 @@ public:
     void afficher();
     
     void Robot();
-private: 
+private:
+    
     String direction;
+    Plot* plot;
     Position position;
-    Objet objet;
+    Objet* objet;
     EtatRobot etat;
+    
 };
 
 #endif //_ROBOT_H

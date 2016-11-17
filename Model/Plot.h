@@ -9,6 +9,7 @@
 class Plot {
 public: 
     
+    Plot();
     int getHauteur();
 private: 
     int hauteur;

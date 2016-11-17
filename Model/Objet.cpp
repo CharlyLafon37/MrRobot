@@ -9,6 +9,10 @@
  * Objet implementation
  */
 
+Objet::Objet() : poids(0)
+{
+    
+}
 
 /**
  * @return int

@@ -9,6 +9,7 @@
  * EtatRobot implementation
  */
 
+EtatRobot EtatRobot::instanceUnique;
 
 /**
  * @return EtatRobot
@@ -84,7 +85,7 @@ EtatRobot EtatRobot::afficher() {
  * @return EtatRobot
  */
 static EtatRobot EtatRobot::instance() {
-    return instanceUnique;
+    return null;
 }
 
 void EtatRobot::EtatRobot() {

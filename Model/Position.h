@@ -9,6 +9,8 @@
 class Position {
 public: 
     
+    Position();
+    
     /**
      * @param x
      */

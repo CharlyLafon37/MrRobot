@@ -9,6 +9,7 @@
 class Objet {
 public: 
     
+    Objet();
     int getPoids();
 private: 
     int poids;
