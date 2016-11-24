@@ -12,11 +12,14 @@
 class AVideFacePlot: public EnRoute {
 public: 
     
-    EtatRobot tourner();
+    virtual EtatRobot* tourner();
     
-    EtatRobot evaluerPlot();
+    virtual EtatRobot* evaluerPlot();
     
-    EtatRobot saisir();
+    virtual EtatRobot* saisir();
+    
+    virtual static EnRoute instance();
+    
 };
 
 #endif //_AVIDEFACEPLOT_H

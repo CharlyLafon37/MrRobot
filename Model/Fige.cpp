@@ -9,10 +9,15 @@
  * Fige implementation
  */
 
+Fige Fige::instanceUnique;
 
 /**
  * @return EtatRobot
  */
-EtatRobot Fige::repartir() {
-    return null;
+EtatRobot* Fige::repartir() {
+    return &(instance());
+}
+
+Fige Fige::instance(){
+    return instanceUnique;
 }

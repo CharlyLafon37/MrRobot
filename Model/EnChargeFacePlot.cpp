@@ -9,31 +9,35 @@
  * EnChargeFacePlot implementation
  */
 
-
 /**
  * @return EtatRobot
  */
-EtatRobot EnChargeFacePlot::poser() {
+EtatRobot* EnChargeFacePlot::poser() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EnChargeFacePlot::peser() {
+EtatRobot* EnChargeFacePlot::peser() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EnChargeFacePlot::evaluerPlot() {
+EtatRobot* EnChargeFacePlot::evaluerPlot() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EnChargeFacePlot::tourner() {
+EtatRobot* EnChargeFacePlot::tourner() {
     return null;
+}
+
+EnRoute EnChargeFacePlot::instance()
+{
+    return instanceUnique;
 }

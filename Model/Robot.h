@@ -49,7 +49,7 @@ private:
     Plot* plot;
     Position position;
     Objet* objet;
-    EtatRobot etat;
+    EtatRobot& etat;
     
 };
 

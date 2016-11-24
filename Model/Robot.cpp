@@ -23,7 +23,7 @@ void Robot::Robot() : position(0,0), direction("N")
  */
 void Robot::avancer(int x, int y) {
     try{
-        etat = etat.avancer();
+        etat = *(etat.avancer());
         position.setx(x);
         position.sety(y);
     }
@@ -38,7 +38,7 @@ void Robot::avancer(int x, int y) {
  */
 void Robot::tourner(String direction) {
     try{
-        etat = etat.tourner();
+        etat = *(etat.tourner());
         this->direction = direction;
     }
     catch(){
@@ -52,7 +52,7 @@ void Robot::tourner(String direction) {
  */
 void Robot::saisir(Objet o) {
     try{
-        etat = etat.saisir();
+        etat = *(etat.saisir());
         objet = o;
     }
     catch(){
@@ -65,7 +65,7 @@ void Robot::saisir(Objet o) {
  */
 void Robot::poser() {
     try{
-        etat = etat.poser();
+        etat = *(etat.poser());
         objet = NULL;
     }
     catch(){
@@ -78,7 +78,7 @@ void Robot::poser() {
  */
 int Robot::peser() {
     try{
-        etat = etat.peser();
+        etat = *(etat.peser());
     }
     catch(){
         std::cout << "Pas possible de peser" << std::endl;
@@ -93,7 +93,7 @@ int Robot::peser() {
  */
 void Robot::rencontrerPlot(Plot p) {
     try{
-        etat = etat.rencontrerPlot();
+        etat = *(etat.rencontrerPlot());
         plot = p;
     }
     catch(){
@@ -106,7 +106,7 @@ void Robot::rencontrerPlot(Plot p) {
  */
 int Robot::evaluerPlot() {
     try{
-        etat = etat.evaluerPlot();
+        etat = *(etat.evaluerPlot());
     }
     catch(){
         std::cout << "Pas possible d'évaluer un plot" << std::endl;
@@ -120,7 +120,7 @@ int Robot::evaluerPlot() {
  */
 void Robot::figer() {
     try{
-        etat = etat.figer();
+        etat = *(etat.figer());
     }
     catch(){
         std::cout << "Pas possible de figer" << std::endl;
@@ -132,7 +132,7 @@ void Robot::figer() {
  */
 void Robot::repartir() {
     try{
-        etat = etat.repartir();
+        etat = *(etat.repartir());
     }
     catch(){
         std::cout << "Pas possible de repartir" << std::endl;

@@ -9,31 +9,35 @@
  * EnCharge implementation
  */
 
-
 /**
  * @return EtatRobot
  */
-EtatRobot EnCharge::avancer() {
+EtatRobot* EnCharge::avancer() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EnCharge::tourner() {
+EtatRobot* EnCharge::tourner() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EnCharge::peser() {
+EtatRobot* EnCharge::peser() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EnCharge::rencontrerPlot() {
+EtatRobot* EnCharge::rencontrerPlot() {
     return null;
+}
+
+EnRoute EnCharge::instance()
+{
+    return instanceUnique;
 }

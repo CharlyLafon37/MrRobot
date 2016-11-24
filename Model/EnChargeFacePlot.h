@@ -12,13 +12,16 @@
 class EnChargeFacePlot: public EnRoute {
 public: 
     
-    EtatRobot poser();
+    virtual EtatRobot* poser();
     
-    EtatRobot peser();
+    virtual EtatRobot* peser();
     
-    EtatRobot evaluerPlot();
+    virtual EtatRobot* evaluerPlot();
     
-    EtatRobot tourner();
+    virtual EtatRobot* tourner();
+    
+    virtual static EnRoute instance();
+    
 };
 
 #endif //_ENCHARGEFACEPLOT_H

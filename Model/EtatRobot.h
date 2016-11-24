@@ -7,34 +7,37 @@
 #define _ETATROBOT_H
 
 class EtatRobot {
-public: 
+public:
     
-    virtual EtatRobot avancer();
+    class UndefinedMethodException() : public std::exception
+    {
+    public:
+        const char* what() const throw () {return "Call to method not allowed.";}
+    }
     
-    virtual EtatRobot tourner();
+    virtual EtatRobot* avancer();
     
-    virtual EtatRobot saisir();
+    virtual EtatRobot* tourner();
     
-    virtual EtatRobot poser();
+    virtual EtatRobot* saisir();
     
-    virtual EtatRobot peser();
+    virtual EtatRobot* poser();
     
-    virtual EtatRobot rencontrerPlot();
+    virtual EtatRobot* peser();
     
-    virtual EtatRobot evaluerPlot();
+    virtual EtatRobot* rencontrerPlot();
     
-    virtual EtatRobot figer();
+    virtual EtatRobot* evaluerPlot();
     
-    virtual EtatRobot repartir();
+    virtual EtatRobot* figer();
     
-    virtual EtatRobot afficher();
+    virtual EtatRobot* repartir();
     
-    static EtatRobot instance();
-protected: 
+    virtual EtatRobot* afficher();
     
-    void EtatRobot();
-private: 
-    static EtatRobot instanceUnique;
+protected:
+    
+    EtatRobot& etatPrecedent;
 };
 
 #endif //_ETATROBOT_H

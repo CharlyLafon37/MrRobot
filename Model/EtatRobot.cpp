@@ -29,62 +29,58 @@ EtatRobot EtatRobot::tourner() {
  * @return EtatRobot
  */
 EtatRobot EtatRobot::saisir() {
+    throw UndefinedMethodException();
+    return nullptr;
+}
+
+/**
+ * @return EtatRobot
+ */
+EtatRobot* EtatRobot::poser() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EtatRobot::poser() {
+EtatRobot* EtatRobot::peser() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EtatRobot::peser() {
+EtatRobot* EtatRobot::rencontrerPlot() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EtatRobot::rencontrerPlot() {
+EtatRobot* EtatRobot::evaluerPlot() {
     return null;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EtatRobot::evaluerPlot() {
-    return null;
+EtatRobot* EtatRobot::figer() {
+    throw UndefinedMethodException();
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EtatRobot::figer() {
-    return null;
+EtatRobot* EtatRobot::repartir() {
+    throw UndefinedMethodException();
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EtatRobot::repartir() {
-    return null;
-}
-
-/**
- * @return EtatRobot
- */
-EtatRobot EtatRobot::afficher() {
-    return null;
-}
-
-/**
- * @return EtatRobot
- */
-static EtatRobot EtatRobot::instance() {
+EtatRobot* EtatRobot::afficher() {
     return null;
 }
 

@@ -11,24 +11,28 @@
  * AVideFacePlot implementation
  */
 
-
 /**
  * @return EtatRobot
  */
-EtatRobot AVideFacePlot::tourner() {
+EtatRobot* AVideFacePlot::tourner() {
     return new AVide();
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot AVideFacePlot::evaluerPlot() {
+EtatRobot* AVideFacePlot::evaluerPlot() {
     return AVideFacePlot::instance();
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot AVideFacePlot::saisir() {
+EtatRobot* AVideFacePlot::saisir() {
     return new EnChargeFacePlot();
+}
+
+EnRoute AVideFacePlot::instance()
+{
+    return instanceUnique;
 }

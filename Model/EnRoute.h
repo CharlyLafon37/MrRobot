@@ -12,7 +12,12 @@
 class EnRoute: public EtatRobot {
 public: 
     
-    EtatRobot figer();
+    EtatRobot* figer();
+    virtual static EnRoute instance() = 0;
+    
+private:
+    
+    static EnRoute instanceUnique;
 };
 
 #endif //_ENROUTE_H

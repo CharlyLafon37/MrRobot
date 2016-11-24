@@ -12,13 +12,15 @@
 class EnCharge: public EnRoute {
 public: 
     
-    EtatRobot avancer();
+    virtual EtatRobot* avancer();
     
-    EtatRobot tourner();
+    virtual EtatRobot* tourner();
     
-    EtatRobot peser();
+    virtual EtatRobot* peser();
     
-    EtatRobot rencontrerPlot();
+    virtual EtatRobot* rencontrerPlot();
+    
+    virtual static EnRoute instance();
 };
 
 #endif //_ENCHARGE_H

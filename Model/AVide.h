@@ -12,11 +12,14 @@
 class AVide: public EnRoute {
 public: 
     
-    virtual EtatRobot avancer();
+    virtual EtatRobot* avancer();
     
-    virtual EtatRobot tourner();
+    virtual EtatRobot* tourner();
     
-    virtual EtatRobot rencontrerPlot();
+    virtual EtatRobot* rencontrerPlot();
+    
+    virtual static EnRoute instance();
+    
 };
 
 #endif //_AVIDE_H
