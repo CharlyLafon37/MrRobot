@@ -84,10 +84,3 @@ EtatRobot* EtatRobot::repartir() {
     throw UndefinedMethodException("Repartir");
     return nullptr;
 }
-
-/**
- * @return EtatRobot
- */
-EtatRobot* EtatRobot::afficher() {
-    return nullptr;
-}

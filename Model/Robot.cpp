@@ -13,7 +13,9 @@ Robot::Robot() : direction("N"), position(0,0), afficheurs()
 {
     plot = nullptr;
     objet = nullptr;
-    etat = AVide::instance();
+    etat = AVideFacePlot::instance();
+    
+    afficher();
 }
 
 /**
@@ -170,9 +172,19 @@ void Robot::detacherVue(Afficheur& vue)
     }
 }
 
-std::string getEtat()
+std::string Robot::getEtat()
 {
-    
+    return etat->getNameEtat();
+}
+
+Position Robot::getPosition()
+{
+    return position;
+}
+
+std::string Robot::getDirection()
+{
+    return direction;
 }
 
 /**

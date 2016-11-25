@@ -6,6 +6,7 @@
 #ifndef _ENROUTE_H
 #define _ENROUTE_H
 
+#include <iostream>
 #include "EtatRobot.h"
 #include "Fige.h"
 

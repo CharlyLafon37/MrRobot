@@ -38,6 +38,11 @@ EtatRobot* AVide::rencontrerPlot() {
     return nullptr;
 }
 
+std::string AVide::getNameEtat()
+{
+    return "AVide";
+}
+
 EtatRobot* AVide::instance()
 {
     if(instanceUnique == nullptr)

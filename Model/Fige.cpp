@@ -9,17 +9,16 @@
  * Fige implementation
  */
 
-Fige* Fige::instanceUnique = nullptr;
+Fige::Fige(EtatRobot* etatPrec)
+{
+    etatPrecedent = etatPrec;
+}
 
-/**
- * @return EtatRobot
- */
 EtatRobot* Fige::repartir() {
     return etatPrecedent;
 }
 
-EtatRobot* Fige::instance(){
-    if(instanceUnique == nullptr)
-        instanceUnique = new Fige();
-    return instanceUnique;
+std::string Fige::getNameEtat()
+{
+    return "Fige";
 }

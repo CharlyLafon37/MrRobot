@@ -18,6 +18,8 @@ public:
     
     virtual EtatRobot* rencontrerPlot();
     
+    virtual std::string getNameEtat();
+    
     static EtatRobot* instance();
     
 private:

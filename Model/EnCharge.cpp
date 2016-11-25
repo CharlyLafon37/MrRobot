@@ -44,6 +44,11 @@ EtatRobot* EnCharge::rencontrerPlot() {
     return nullptr;
 }
 
+std::string EnCharge::getNameEtat()
+{
+    return "EnCharge";
+}
+
 EtatRobot* EnCharge::instance()
 {
     if(instanceUnique == nullptr)

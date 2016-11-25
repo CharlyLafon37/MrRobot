@@ -44,6 +44,11 @@ EtatRobot* EnChargeFacePlot::tourner() {
     return nullptr;
 }
 
+std::string EnChargeFacePlot::getNameEtat()
+{
+    return "EnChargeFacePlot";
+}
+
 EtatRobot* EnChargeFacePlot::instance()
 {
     if(instanceUnique == nullptr)

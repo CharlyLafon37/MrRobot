@@ -20,6 +20,8 @@ public:
     
     virtual EtatRobot* tourner();
     
+    virtual std::string getNameEtat();
+    
     static EtatRobot* instance();
     
 private:

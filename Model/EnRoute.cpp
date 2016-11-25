@@ -13,6 +13,5 @@
  * @return EtatRobot
  */
 EtatRobot* EnRoute::figer() {
-    etatPrecedent = this;
-    return Fige::instance();
+    return new Fige(this);
 }

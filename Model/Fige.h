@@ -6,18 +6,21 @@
 #ifndef _FIGE_H
 #define _FIGE_H
 
+#include <iostream>
 #include "EtatRobot.h"
 
 
 class Fige: public EtatRobot {
 public: 
     
+    Fige(EtatRobot* etatPrec);
+    
     EtatRobot* repartir();
-    static EtatRobot* instance();
+    virtual std::string getNameEtat();
     
 private:
     
-    static Fige* instanceUnique;
+    EtatRobot* etatPrecedent;
 };
 
 #endif //_FIGE_H

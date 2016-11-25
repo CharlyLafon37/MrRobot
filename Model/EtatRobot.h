@@ -39,11 +39,7 @@ public:
     
     virtual EtatRobot* repartir();
     
-    virtual EtatRobot* afficher();
-    
-protected:
-    
-    EtatRobot* etatPrecedent;
+    virtual std::string getNameEtat() = 0;
 };
 
 #endif //_ETATROBOT_H

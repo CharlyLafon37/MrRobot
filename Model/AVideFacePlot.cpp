@@ -39,6 +39,11 @@ EtatRobot* AVideFacePlot::saisir() {
     return EnChargeFacePlot::instance();
 }
 
+std::string AVideFacePlot::getNameEtat()
+{
+    return "AVideFacePlot";
+}
+
 EtatRobot* AVideFacePlot::instance()
 {
     if(instanceUnique == nullptr)

@@ -12,7 +12,7 @@
 #include "Position.h"
 #include "Objet.h"
 #include "EtatRobot.h"
-#include "AVide.h"
+#include "AVideFacePlot.h"
 #include "Afficheur.h"
 
 class Afficheur;
