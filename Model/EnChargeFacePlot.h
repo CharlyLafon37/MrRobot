@@ -20,7 +20,13 @@ public:
     
     virtual EtatRobot* tourner();
     
-    virtual static EnRoute instance();
+    static EtatRobot* instance();
+    
+private:
+    
+    static EnChargeFacePlot* instanceUnique;
+    
+    EnChargeFacePlot();
     
 };
 

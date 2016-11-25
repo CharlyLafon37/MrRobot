@@ -10,28 +10,37 @@
  * AVide implementation
  */
 
+AVide* AVide::instanceUnique = nullptr;
+
+AVide::AVide()
+{
+    
+}
+
 /**
  * @return EtatRobot
  */
 EtatRobot* AVide::avancer() {
-    return AVide::instance();
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* AVide::tourner() {
-    return new AVide();
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* AVide::rencontrerPlot() {
-    return new AVideFacePlot();
+    return nullptr;
 }
 
-EnRoute AVide::instance()
+EtatRobot* AVide::instance()
 {
+    if(instanceUnique == nullptr)
+        instanceUnique = new AVide();
     return instanceUnique;
 }

@@ -9,7 +9,7 @@
  * Position implementation
  */
 
-Position::Position() : x(0), y(0)
+Position::Position(int newX, int newY) : x(newX), y(newY)
 {
     
 }
@@ -18,16 +18,16 @@ Position::Position() : x(0), y(0)
  * @param x
  * @return void
  */
-void Position::setx(int x) {
-    return;
+void Position::setx(int newX) {
+    x = newX;
 }
 
 /**
  * @param y
  * @return void
  */
-void Position::sety(int y) {
-    return;
+void Position::sety(int newY) {
+    y = newY;
 }
 
 /**

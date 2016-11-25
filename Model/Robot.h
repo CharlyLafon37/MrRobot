@@ -6,6 +6,17 @@
 #ifndef _ROBOT_H
 #define _ROBOT_H
 
+#include <iostream>
+#include <vector>
+#include "Plot.h"
+#include "Position.h"
+#include "Objet.h"
+#include "EtatRobot.h"
+#include "AVide.h"
+#include "Afficheur.h"
+
+class Afficheur;
+
 class Robot {
 public: 
     
@@ -18,12 +29,12 @@ public:
     /**
      * @param direction
      */
-    void tourner(String direction);
+    void tourner(std::string direction);
     
     /**
      * @param o
      */
-    void saisir(Objet o);
+    void saisir(Objet& o);
     
     void poser();
     
@@ -32,7 +43,7 @@ public:
     /**
      * @param p
      */
-    void rencontrerPlot(Plot p);
+    void rencontrerPlot(Plot& p);
     
     int evaluerPlot();
     
@@ -40,16 +51,25 @@ public:
     
     void repartir();
     
+    // Also known as "notify()"
     void afficher();
     
-    void Robot();
+    void attacherVue(Afficheur& vue);
+    void detacherVue(Afficheur& vue);
+    
+    void getEtat();
+    void getPosition();
+    void getDirection();
+    
+    Robot();
 private:
     
-    String direction;
+    std::string direction;
     Plot* plot;
     Position position;
     Objet* objet;
-    EtatRobot& etat;
+    EtatRobot* etat;
+    std::vector<Afficheur*> afficheurs;
     
 };
 

@@ -9,27 +9,35 @@
  * EtatRobot implementation
  */
 
-EtatRobot EtatRobot::instanceUnique;
+EtatRobot::UndefinedMethodException::UndefinedMethodException(std::string errorMessage) : msg("Action : " + errorMessage + " impossible")
+{
+    
+}
 
-/**
- * @return EtatRobot
- */
-EtatRobot EtatRobot::avancer() {
-    return null;
+const char* EtatRobot::UndefinedMethodException::what() const throw()
+{
+    return msg.c_str();
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EtatRobot::tourner() {
-    return null;
+EtatRobot* EtatRobot::avancer() {
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
-EtatRobot EtatRobot::saisir() {
-    throw UndefinedMethodException();
+EtatRobot* EtatRobot::tourner() {
+    return nullptr;
+}
+
+/**
+ * @return EtatRobot
+ */
+EtatRobot* EtatRobot::saisir() {
+    throw UndefinedMethodException("Saisir");
     return nullptr;
 }
 
@@ -37,35 +45,35 @@ EtatRobot EtatRobot::saisir() {
  * @return EtatRobot
  */
 EtatRobot* EtatRobot::poser() {
-    return null;
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* EtatRobot::peser() {
-    return null;
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* EtatRobot::rencontrerPlot() {
-    return null;
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* EtatRobot::evaluerPlot() {
-    return null;
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* EtatRobot::figer() {
-    throw UndefinedMethodException();
+    throw UndefinedMethodException("Figer");
     return nullptr;
 }
 
@@ -73,7 +81,7 @@ EtatRobot* EtatRobot::figer() {
  * @return EtatRobot
  */
 EtatRobot* EtatRobot::repartir() {
-    throw UndefinedMethodException();
+    throw UndefinedMethodException("Repartir");
     return nullptr;
 }
 
@@ -81,9 +89,5 @@ EtatRobot* EtatRobot::repartir() {
  * @return EtatRobot
  */
 EtatRobot* EtatRobot::afficher() {
-    return null;
-}
-
-void EtatRobot::EtatRobot() {
-
+    return nullptr;
 }

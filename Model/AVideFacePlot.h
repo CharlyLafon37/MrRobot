@@ -18,7 +18,12 @@ public:
     
     virtual EtatRobot* saisir();
     
-    virtual static EnRoute instance();
+    static EtatRobot* instance();
+    
+private:
+    
+    static AVideFacePlot* instanceUnique;
+    AVideFacePlot();
     
 };
 

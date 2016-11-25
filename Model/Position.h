@@ -9,17 +9,17 @@
 class Position {
 public: 
     
-    Position();
+    Position(int newX, int newY);
     
     /**
      * @param x
      */
-    void setx(int x);
+    void setx(int newX);
     
     /**
      * @param y
      */
-    void sety(int y);
+    void sety(int newY);
     
     int getx();
     

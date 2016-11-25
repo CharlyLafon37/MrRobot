@@ -7,17 +7,13 @@
 #define _ENROUTE_H
 
 #include "EtatRobot.h"
+#include "Fige.h"
 
 
 class EnRoute: public EtatRobot {
 public: 
     
     EtatRobot* figer();
-    virtual static EnRoute instance() = 0;
-    
-private:
-    
-    static EnRoute instanceUnique;
 };
 
 #endif //_ENROUTE_H

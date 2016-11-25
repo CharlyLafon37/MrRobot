@@ -6,14 +6,20 @@
 #ifndef _ETATROBOT_H
 #define _ETATROBOT_H
 
+#include <iostream>
+
 class EtatRobot {
 public:
     
-    class UndefinedMethodException() : public std::exception
+    class UndefinedMethodException : public std::exception
     {
+    private:
+        std::string msg;
     public:
-        const char* what() const throw () {return "Call to method not allowed.";}
-    }
+        UndefinedMethodException(std::string errorMessage);
+        const char* what() const throw ();
+        virtual ~UndefinedMethodException() throw() {}
+    };
     
     virtual EtatRobot* avancer();
     
@@ -37,7 +43,7 @@ public:
     
 protected:
     
-    EtatRobot& etatPrecedent;
+    EtatRobot* etatPrecedent;
 };
 
 #endif //_ETATROBOT_H

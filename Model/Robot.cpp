@@ -9,11 +9,11 @@
  * Robot implementation
  */
 
-void Robot::Robot() : position(0,0), direction("N")
+Robot::Robot() : direction("N"), position(0,0), afficheurs()
 {
     plot = nullptr;
     objet = nullptr;
-    etat = EtatRobot.instance();
+    etat = AVide::instance();
 }
 
 /**
@@ -23,41 +23,44 @@ void Robot::Robot() : position(0,0), direction("N")
  */
 void Robot::avancer(int x, int y) {
     try{
-        etat = *(etat.avancer());
+        etat = etat->avancer();
         position.setx(x);
         position.sety(y);
     }
-    catch(){
-        std::cout << "Pas possible d'avancer" << std::endl;
+    catch(const EtatRobot::UndefinedMethodException& e){
+        std::cout << e.what() << std::endl;
     }
+    afficher();
 }
 
 /**
  * @param direction
  * @return void
  */
-void Robot::tourner(String direction) {
+void Robot::tourner(std::string direction) {
     try{
-        etat = *(etat.tourner());
+        etat = etat->tourner();
         this->direction = direction;
     }
-    catch(){
-        std::cout << "Pas possible de tourner" << std::endl;
+    catch(const EtatRobot::UndefinedMethodException& e){
+        std::cout << e.what() << std::endl;
     }
+    afficher();
 }
 
 /**
  * @param o
  * @return void
  */
-void Robot::saisir(Objet o) {
+void Robot::saisir(Objet& o) {
     try{
-        etat = *(etat.saisir());
-        objet = o;
+        etat = etat->saisir();
+        objet = &o;
     }
-    catch(){
-        std::cout << "Pas possible de saisir" << std::endl;
+    catch(const EtatRobot::UndefinedMethodException& e){
+        std::cout << e.what() << std::endl;
     }
+    afficher();
 }
 
 /**
@@ -65,12 +68,13 @@ void Robot::saisir(Objet o) {
  */
 void Robot::poser() {
     try{
-        etat = *(etat.poser());
+        etat = etat->poser();
         objet = NULL;
     }
-    catch(){
-        std::cout << "Pas possible de poser" << std::endl;
+    catch(const EtatRobot::UndefinedMethodException& e){
+        std::cout << e.what() << std::endl;
     }
+    afficher();
 }
 
 /**
@@ -78,27 +82,31 @@ void Robot::poser() {
  */
 int Robot::peser() {
     try{
-        etat = *(etat.peser());
+        etat = etat->peser();
     }
-    catch(){
-        std::cout << "Pas possible de peser" << std::endl;
+    catch(const EtatRobot::UndefinedMethodException& e){
+        std::cout << e.what() << std::endl;
     }
     
-    return objet.getPoids();
+    afficher();
+    
+    return objet->getPoids();
 }
 
 /**
  * @param p
  * @return void
  */
-void Robot::rencontrerPlot(Plot p) {
+void Robot::rencontrerPlot(Plot& p) {
     try{
-        etat = *(etat.rencontrerPlot());
-        plot = p;
+        etat = etat->rencontrerPlot();
+        plot = &p;
     }
-    catch(){
-        std::cout << "Pas possible de rencontrer un plot" << std::endl;
+    catch(const EtatRobot::UndefinedMethodException& e){
+        std::cout << e.what() << std::endl;
     }
+    
+    afficher();
 }
 
 /**
@@ -106,13 +114,15 @@ void Robot::rencontrerPlot(Plot p) {
  */
 int Robot::evaluerPlot() {
     try{
-        etat = *(etat.evaluerPlot());
+        etat = etat->evaluerPlot();
     }
-    catch(){
-        std::cout << "Pas possible d'évaluer un plot" << std::endl;
+    catch(const EtatRobot::UndefinedMethodException& e){
+        std::cout << e.what() << std::endl;
     }
     
-    return plot.getHauteur();
+    afficher();
+    
+    return plot->getHauteur();
 }
 
 /**
@@ -120,11 +130,13 @@ int Robot::evaluerPlot() {
  */
 void Robot::figer() {
     try{
-        etat = *(etat.figer());
+        etat = etat->figer();
     }
-    catch(){
-        std::cout << "Pas possible de figer" << std::endl;
+    catch(const EtatRobot::UndefinedMethodException& e){
+        std::cout << e.what() << std::endl;
     }
+    
+    afficher();
 }
 
 /**
@@ -132,16 +144,31 @@ void Robot::figer() {
  */
 void Robot::repartir() {
     try{
-        etat = *(etat.repartir());
+        etat = etat->repartir();
     }
-    catch(){
-        std::cout << "Pas possible de repartir" << std::endl;
+    catch(const EtatRobot::UndefinedMethodException& e){
+        std::cout << e.what() << std::endl;
     }
+    
+    afficher();
+}
+
+void Robot::attacherVue(Afficheur& vue)
+{
+    afficheurs.push_back(&vue);
+}
+
+void Robot::detacherVue(Afficheur& vue)
+{
+    
 }
 
 /**
  * @return void
  */
 void Robot::afficher() {
-    return;
+    for(Afficheur* aff : afficheurs)
+    {
+        aff->afficher(*this);
+    }
 }

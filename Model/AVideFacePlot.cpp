@@ -11,28 +11,37 @@
  * AVideFacePlot implementation
  */
 
+AVideFacePlot* AVideFacePlot::instanceUnique = nullptr;
+
+AVideFacePlot::AVideFacePlot()
+{
+    
+}
+
 /**
  * @return EtatRobot
  */
 EtatRobot* AVideFacePlot::tourner() {
-    return new AVide();
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* AVideFacePlot::evaluerPlot() {
-    return AVideFacePlot::instance();
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* AVideFacePlot::saisir() {
-    return new EnChargeFacePlot();
+    return EnChargeFacePlot::instance();
 }
 
-EnRoute AVideFacePlot::instance()
+EtatRobot* AVideFacePlot::instance()
 {
+    if(instanceUnique == nullptr)
+        instanceUnique  = new AVideFacePlot();
     return instanceUnique;
 }

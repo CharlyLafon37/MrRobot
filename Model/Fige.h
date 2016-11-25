@@ -13,11 +13,11 @@ class Fige: public EtatRobot {
 public: 
     
     EtatRobot* repartir();
-    virtual static Fige instance();
+    static EtatRobot* instance();
     
 private:
     
-    static Fige instanceUnique;
+    static Fige* instanceUnique;
 };
 
 #endif //_FIGE_H

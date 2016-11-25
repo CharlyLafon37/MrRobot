@@ -20,7 +20,13 @@ public:
     
     virtual EtatRobot* rencontrerPlot();
     
-    virtual static EnRoute instance();
+    static EtatRobot* instance();
+    
+private:
+   
+    static EnCharge* instanceUnique;
+    EnCharge();
+    
 };
 
 #endif //_ENCHARGE_H

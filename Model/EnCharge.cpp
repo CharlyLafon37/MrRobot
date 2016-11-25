@@ -9,35 +9,44 @@
  * EnCharge implementation
  */
 
+EnCharge* EnCharge::instanceUnique = nullptr;
+
+EnCharge::EnCharge()
+{
+    
+}
+
 /**
  * @return EtatRobot
  */
 EtatRobot* EnCharge::avancer() {
-    return null;
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* EnCharge::tourner() {
-    return null;
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* EnCharge::peser() {
-    return null;
+    return nullptr;
 }
 
 /**
  * @return EtatRobot
  */
 EtatRobot* EnCharge::rencontrerPlot() {
-    return null;
+    return nullptr;
 }
 
-EnRoute EnCharge::instance()
+EtatRobot* EnCharge::instance()
 {
+    if(instanceUnique == nullptr)
+        instanceUnique = new EnCharge();
     return instanceUnique;
 }

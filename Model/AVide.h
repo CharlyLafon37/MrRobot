@@ -18,8 +18,12 @@ public:
     
     virtual EtatRobot* rencontrerPlot();
     
-    virtual static EnRoute instance();
+    static EtatRobot* instance();
     
+private:
+   
+    static AVide* instanceUnique;
+    AVide();
 };
 
 #endif //_AVIDE_H
