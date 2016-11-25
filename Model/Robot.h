@@ -57,9 +57,9 @@ public:
     void attacherVue(Afficheur& vue);
     void detacherVue(Afficheur& vue);
     
-    void getEtat();
-    void getPosition();
-    void getDirection();
+    std::string getEtat();
+    Position getPosition();
+    std::string getDirection();
     
     Robot();
 private:

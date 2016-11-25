@@ -160,6 +160,18 @@ void Robot::attacherVue(Afficheur& vue)
 
 void Robot::detacherVue(Afficheur& vue)
 {
+    for(size_t i = 0; i < afficheurs.size(); i++)
+    {
+        if(afficheurs[i] == &vue)
+        {
+            afficheurs.erase(afficheurs.begin() + i);
+            return;
+        }
+    }
+}
+
+std::string getEtat()
+{
     
 }
 
