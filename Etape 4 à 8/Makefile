@@ -19,7 +19,7 @@ FLAGS =-g -ansi -Wall -Wextra -Wold-style-cast -Woverloaded-virtual -D_DEBUG_ -s
 EXE_NAME= robot.out
 
 #can have several ones separated by spaces, only cpp files
-SOURCES = main.cpp Commande.cpp CommandeRobot.cpp CommandeAvancer.cpp CommandeTourner.cpp CommandePoser.cpp CommandeSaisir.cpp CommandePeser.cpp CommandeRencontrerPlot.cpp CommandeEvaluerPlot.cpp CommandeUndo.cpp CommandeRepartir.cpp CommandeFiger.cpp Afficheur.cpp AfficheurTexte.cpp AVide.cpp AVideFacePlot.cpp EnCharge.cpp EnChargeFacePlot.cpp EnRoute.cpp EtatRobot.cpp Fige.cpp Objet.cpp Plot.cpp Position.cpp Robot.cpp
+SOURCES = main.cpp LecteurFichier.cpp Commande.cpp CommandeRobot.cpp CommandeAvancer.cpp CommandeTourner.cpp CommandePoser.cpp CommandeSaisir.cpp CommandePeser.cpp CommandeRencontrerPlot.cpp CommandeEvaluerPlot.cpp CommandeUndo.cpp CommandeRepartir.cpp CommandeFiger.cpp Objet.cpp Plot.cpp Robot.cpp
 
 
 #PATH to extra header used in the project (when using libs not installed in the OS)
