@@ -19,12 +19,12 @@ Commande* CommandeFiger::constructeurVirtuel(LecteurFichier& lect)
 void CommandeFiger::execute()
 {
     robot->figer();
+    pileDefaire.push(this);
 }
 
 void CommandeFiger::defaire()
 {
     robot->repartir();
-    pileDefaire.push(this);
 }
 
 /**
